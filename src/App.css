@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='77' height='107' viewBox='0 0 77 107'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='stamp-collection' fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M46 101a5 5 0 0 1 5 5h5a5 5 0 0 1 10 0h5a5 5 0 0 1 5-5v-5a5 5 0 0 1 0-10v-5a5 5 0 0 1 0-10v-5a5 5 0 0 1 0-10v-5a5 5 0 0 1 0-10v-5a5 5 0 0 1 0-10v-5a5 5 0 0 1 0-10V6a5 5 0 0 1-5-5h-5a5 5 0 0 1-10 0h-5a5 5 0 0 1-10 0h-5a5 5 0 0 1-10 0h-5a5 5 0 0 1-10 0H6a5 5 0 0 1-5 5v5a5 5 0 0 1 0 10v5a5 5 0 0 1 0 10v5a5 5 0 0 1 0 10v5a5 5 0 0 1 0 10v5a5 5 0 0 1 0 10v5a5 5 0 0 1 0 10v5a5 5 0 0 1 5 5h5a5 5 0 0 1 10 0h5a5 5 0 0 1 10 0h5a5 5 0 0 1 5-5zm15-2a7 7 0 0 0-6.71 5h-1.58a7 7 0 0 0-13.42 0h-1.58a7 7 0 0 0-13.42 0h-1.58a7 7 0 0 0-13.42 0H7.71A7.01 7.01 0 0 0 3 99.29v-1.58a7 7 0 0 0 0-13.42v-1.58a7 7 0 0 0 0-13.42v-1.58a7 7 0 0 0 0-13.42v-1.58a7 7 0 0 0 0-13.42v-1.58a7 7 0 0 0 0-13.42v-1.58A7 7 0 0 0 3 9.29V7.71A7.02 7.02 0 0 0 7.71 3h1.58a7 7 0 0 0 13.42 0h1.58a7 7 0 0 0 13.42 0h1.58a7 7 0 0 0 13.42 0h1.58a7 7 0 0 0 13.42 0h1.58A7.02 7.02 0 0 0 74 7.71v1.58a7 7 0 0 0 0 13.42v1.58a7 7 0 0 0 0 13.42v1.58a7 7 0 0 0 0 13.42v1.58a7 7 0 0 0 0 13.42v1.58a7 7 0 0 0 0 13.42v1.58a7 7 0 0 0 0 13.42v1.58a7.01 7.01 0 0 0-4.71 4.71h-1.58A7 7 0 0 0 61 99zM12 12h53v83H12V12zm51 81H14V14h49v79z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: 
+    "image image-gallery"
+    "slider image-gallery";
+    /* "image-gallery"; */
+  height: 90vh;
+  width: 100vw;
+  background-color: #ffffffba;
+  /* padding: 2rem; */
+  width: 80%;
+  margin: 1rem auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-image-container {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #cdcdac59;
+}
+
+.main-image {
+  grid-area: image;
+  /* background-image: url("https://source.unsplash.com/EwKXn5CapA4"); */
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  /* border: 2px solid green; */
+  background-size: contain;
+  /* margin: 0 2rem; */
+  /* margin-top: 2rem; */
+}
+
+.image-gallery {
+  background: #cdcdac;
+  grid-area: image-gallery;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem ;
+  /* border: 2px solid purple; */
+}
+
+.alternative-image {
+  width: 20%;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+/* .sidebar {
+  grid-area: sidebar;
+  background-color: hsl(265, 100%, 86%);
+  border-left: 1px solid hsl(265, 100%, 56%);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+} */
+
+/* .sidebar-item {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: hsl(265, 100%, 86%);
+  padding: 1rem;
+  position: relative;
+  transition: background-color 150ms;
+} */
+
+/* .sidebar-item.active {
+  background-color: hsl(265, 100%, 70%);
+} */
+
+/* .sidebar-item:after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: 0;
+  height: 1px;
+  background-color: hsl(265, 100%, 46%);
+} */
+
+/* .sidebar-item:last-child::after {
+  display: none;
+} */
+
+/* .sidebar-item:hover, .sidebar-item:focus {
+  background-color: hsl(265, 100%, 76%);
+
+} */
+
+.slider-container {
+  grid-area: slider;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #9f9f9f;
+}
+
+.slider-container-item {
+  width: 42%;
+  margin: 0 1rem;
+  /* border: 2px solid yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-container-item p {
+  width: 50%;
+}
+
+.slider {
+  width: 50%;
+  cursor: pointer;
+}
+
+.reset-button {
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 42%;
 }
